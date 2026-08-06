@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="常盤井湧之介のポートフォリオ。iOSアプリとAIを中心に、企画・実装・公開・改善まで取り組んでいます。">
+  <meta name="theme-color" content="#f4f1ea">
+  <meta property="og:title" content="Yunosuke Tokiwai — iOS / AI Product Developer">
+  <meta property="og:description" content="使われるところまで、つくる。常盤井湧之介のポートフォリオ。">
+  <meta property="og:type" content="website">
+  <title>Yunosuke Tokiwai — iOS / AI Product Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="#top" aria-label="ページ上部へ">YT<span>.</span></a>
+    <nav aria-label="メインナビゲーション">
+      <a href="#work">Works</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero wrap">
+      <p class="eyebrow">iOS / AI Product Developer</p>
+      <h1>使われるところまで、<br>つくる。</h1>
+      <div class="hero-bottom">
+        <p class="lead">ユーザーの課題を確かめ、設計し、実装し、公開後も直す。<br>iOSとAIを軸に、プロダクトを一つの流れとしてつくっています。</p>
+        <a class="round-link" href="#work" aria-label="制作実績を見る"><span>Works</span><span aria-hidden="true">↓</span></a>
+      </div>
+    </section>
+
+    <section class="proof wrap" aria-label="主な実績">
+      <div><strong>App Store</strong><span>公開・運用中</span></div>
+      <div><strong>8</strong><span>Stellise updates</span></div>
+      <div><strong>28</strong><span>downloads</span></div>
+      <div><strong>4</strong><span>selected projects</span></div>
+    </section>
+
+    <section class="work wrap" id="work">
+      <div class="section-head reveal">
+        <p class="eyebrow">Selected work</p>
+        <h2>つくったもの</h2>
+      </div>
+
+      <article class="featured reveal">
+        <div class="featured-copy">
+          <div class="project-meta"><span>01</span><span>iOS App / Released</span></div>
+          <h3>Stellise</h3>
+          <p class="project-lead">睡眠から、出発まで。<br>朝の流れを整えるiPhoneアプリ。</p>
+          <p>睡眠中の音と体動を端末内で解析し、天気・交通・予定に合わせて朝の行動を組み立てます。2名開発で、全体統括、センサー・外部APIを含む機能実装、App Storeへの申請と公開を担当しました。</p>
+          <ul class="facts">
+            <li>生の音声・体動データを外部へ送らないオンデバイス解析</li>
+            <li>SwiftUI / TensorFlow Lite / CoreMotion / Firebase / StoreKit</li>
+            <li>App Store公開後、8回のアップデートを実施</li>
+          </ul>
+          <div class="links">
+            <a href="https://stellise-app.com" target="_blank" rel="noreferrer">Website ↗</a>
+            <a href="https://apps.apple.com/app/apple-store/id6760934295" target="_blank" rel="noreferrer">App Store ↗</a>
+            <a href="https://github.com/yuu-0617/Stellise" target="_blank" rel="noreferrer">GitHub ↗</a>
+          </div>
+        </div>
+        <a class="phone-stage" href="https://stellise-app.com" target="_blank" rel="noreferrer" aria-label="Stellise公式サイトを見る">
+          <img src="https://stellise-app.com/assets/home-night.webp" alt="Stelliseの睡眠画面" loading="eager">
+        </a>
+      </article>
+
+      <div class="project-grid">
+        <article class="project-card reveal">
+          <div class="project-meta"><span>02</span><span>Multimodal AI / Developing</span></div>
+          <h3>えほんのたね</h3>
+          <p>子どもの絵をAIが読み取り、問いかけへの答えを取り入れながら、その子だけの物語と読み聞かせ音声をつくる対話システム。</p>
+          <p class="role">個人開発｜フロントエンド、バックエンド、AI連携を設計・実装</p>
+          <p class="stack">React · TypeScript · FastAPI · Gemini · AivisSpeech</p>
+          <a href="https://github.com/yuu-0617/PictureStoryGenerator" target="_blank" rel="noreferrer">View repository ↗</a>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-meta"><span>03</span><span>Local AI / Prototype</span></div>
+          <h3>人事AIエージェント</h3>
+          <p>社内文書を外部の生成AIへ送らず、利用者の権限に応じて検索・回答する中小企業向けローカルRAG。</p>
+          <p class="role">共同開発｜追加学習、権限制御、承認付き文書編集、導入手順を担当</p>
+          <p class="stack">Python · FastAPI · Qdrant · vLLM · Docker · QLoRA</p>
+          <a href="https://github.com/yuu-0617/hr-assistant-ai" target="_blank" rel="noreferrer">View repository ↗</a>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-meta"><span>04</span><span>iOS App / Developing</span></div>
+          <h3>MUSELAB</h3>
+          <p>手持ちコスメと美容記録を一元管理し、自分に合うケアや次の商品選びにつなげるiOSアプリ。</p>
+          <p class="role">3名チーム｜iOS開発担当。49名への街頭アンケートを仕様へ反映</p>
+          <p class="stack">Swift · SwiftUI · Combine · PhotosUI</p>
+          <a href="https://github.com/yuu-0617/MUSELAB_ios" target="_blank" rel="noreferrer">View repository ↗</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="process wrap" aria-labelledby="process-title">
+      <div class="section-head reveal">
+        <p class="eyebrow">How I work</p>
+        <h2 id="process-title">実装の前後も、仕事にする。</h2>
+      </div>
+      <div class="process-grid">
+        <div class="reveal"><span>01</span><h3>確かめる</h3><p>誰が、どこで困るのか。利用者への聞き取りや自分自身の体験から、解くべき課題を絞ります。</p></div>
+        <div class="reveal"><span>02</span><h3>組み立てる</h3><p>UI、センサー、AI、外部APIを目的に合わせて選び、動くだけでなく扱い方まで設計します。</p></div>
+        <div class="reveal"><span>03</span><h3>届けて直す</h3><p>審査、公開、問い合わせ対応まで行い、実際の利用とフィードバックを次の改善につなげます。</p></div>
+      </div>
+    </section>
+
+    <section class="about wrap" id="about">
+      <div class="about-title reveal">
+        <p class="eyebrow">About</p>
+        <h2>常盤井 湧之介<br><span>Yunosuke Tokiwai</span></h2>
+      </div>
+      <div class="about-copy reveal">
+        <p>名古屋国際工科専門職大学でソフトウェア開発を学んでいます。画面をつくることだけではなく、企画、要件整理、実装、テスト、リリース、運用まで関われるアプリケーションエンジニアを目指しています。</p>
+        <p>現在の関心領域は、iOSアプリ開発、マルチモーダルAI、ローカルLLMを使った業務支援です。</p>
+        <dl>
+          <div><dt>iOS</dt><dd>Swift, SwiftUI, Combine, CoreMotion, CoreLocation, MapKit, AVFoundation, StoreKit</dd></div>
+          <div><dt>Backend / AI</dt><dd>Python, FastAPI, Gemini API, TensorFlow Lite, RAG, Qdrant, vLLM, QLoRA</dd></div>
+          <div><dt>Web / Infra</dt><dd>React, TypeScript, Vite, HTML, CSS, JavaScript, PHP, Docker, Firebase, GitHub</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="contact wrap" id="contact">
+      <p class="eyebrow">Contact</p>
+      <h2>まず、つくってみる。<br>そこから考える。</h2>
+      <div class="contact-links">
+        <a href="https://github.com/yuu-0617" target="_blank" rel="noreferrer">GitHub ↗</a>
+        <a href="https://huggingface.co/yuu0617" target="_blank" rel="noreferrer">Hugging Face ↗</a>
+        <a href="https://x.com/stellise_app" target="_blank" rel="noreferrer">X / Stellise ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <span>© <span id="year">2026</span> Yunosuke Tokiwai</span>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
