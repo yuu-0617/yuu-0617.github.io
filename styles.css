@@ -55,9 +55,11 @@ img { display: block; max-width: 100%; }
 .proof span { margin-top: 6px; color: var(--muted); font-size: .78rem; }
 
 .work, .process, .about { padding-top: 148px; }
-.section-head { display: grid; grid-template-columns: 1fr 2fr; align-items: start; margin-bottom: 56px; }
+.section-head { display: grid; grid-template-columns: 220px minmax(0, 1fr); align-items: start; margin-bottom: 56px; }
 .section-head h2, .about h2, .contact h2 { margin: 0; font-size: clamp(2.4rem, 5vw, 4.8rem); line-height: 1.08; letter-spacing: -.06em; font-weight: 600; }
 .section-head .eyebrow { padding-top: 12px; }
+.work-title { display: flex; flex-wrap: wrap; column-gap: .24em; }
+.work-title span { white-space: nowrap; }
 
 .featured { min-height: 700px; background: var(--night); color: #f8f6ef; display: grid; grid-template-columns: 1.1fr .9fr; overflow: hidden; }
 .featured-copy { padding: clamp(36px, 6vw, 78px); }
@@ -76,7 +78,7 @@ img { display: block; max-width: 100%; }
 .project-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-left: 1px solid var(--line); }
 .project-card { min-height: 520px; padding: 42px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); display: flex; flex-direction: column; }
 .project-card .project-meta { color: var(--muted); }
-.project-card h3 { margin: 72px 0 24px; font-size: clamp(1.9rem, 3vw, 2.8rem); letter-spacing: -.05em; line-height: 1.15; }
+.project-card h3 { margin: 72px 0 24px; font-size: clamp(1.8rem, 2.5vw, 2.1rem); letter-spacing: -.05em; line-height: 1.2; word-break: keep-all; }
 .project-card p { color: #53514c; line-height: 1.85; font-size: .92rem; }
 .project-card .role { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--ink); font-size: .8rem; }
 .project-card .stack { color: var(--muted); font-size: .74rem; }
