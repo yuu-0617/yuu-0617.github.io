@@ -34,10 +34,10 @@
       var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
       var seen = false;
       try { seen = sessionStorage.getItem("splash") === "1"; sessionStorage.setItem("splash", "1"); } catch (e) {}
-      root.classList.add(seen || reduce ? "no-splash" : "splash-on");
+      root.classList.add("js", seen || reduce ? "no-splash" : "splash-on");
     })();
   </script>
-  <link rel="stylesheet" href="styles.css?v=20261014-2">
+  <link rel="stylesheet" href="styles.css?v=20261014-3">
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://yuu-tokiwai.com/#website","name":"Yunosuke Tokiwai","alternateName":"常盤井湧之介","url":"https://yuu-tokiwai.com/"},{"@type":"ProfilePage","@id":"https://yuu-tokiwai.com/#profile","url":"https://yuu-tokiwai.com/","name":"常盤井湧之介｜iOSアプリ開発ポートフォリオ","dateCreated":"2026-08-07T00:00:00+09:00","dateModified":"2026-10-14T00:00:00+09:00","mainEntity":{"@type":"Person","@id":"https://yuu-tokiwai.com/#person","name":"常盤井湧之介","alternateName":"Yunosuke Tokiwai","url":"https://yuu-tokiwai.com/","image":"https://yuu-tokiwai.com/portrait.jpg","description":"Swift・SwiftUIによるiOSアプリとAIプロダクトを開発する学生エンジニア","affiliation":{"@type":"CollegeOrUniversity","name":"名古屋国際工科専門職大学"},"sameAs":["https://github.com/yuu-0617","https://huggingface.co/yuu0617","https://x.com/yuu_tokiwai"],"knowsAbout":["Swift","SwiftUI","iOS Development","Python","FastAPI","TensorFlow Lite","Generative AI"]}}]}</script>
 </head>
 <body>
@@ -87,11 +87,12 @@
     </section>
 
     <section class="work" id="work">
-      <h2 class="heading">制作物</h2>
+      <h2 class="heading rv">制作物</h2>
 
-      <article class="featured">
-        <img class="featured-bg" src="https://stellise-app.com/assets/home-night.webp" alt="" aria-hidden="true">
-        <div class="featured-copy glass glass-dark">
+      <div class="featured-stage">
+        <div class="featured-glow" aria-hidden="true"><span></span><span></span></div>
+      <article class="featured glass rv">
+        <div class="featured-copy">
           <p class="chip">iOSアプリ　App Storeで公開中</p>
           <h3>Stellise</h3>
           <p class="project-lead">睡眠から、出発まで。<br>朝の流れを整えるiPhoneアプリ。</p>
@@ -107,13 +108,14 @@
             <a class="btn" href="https://github.com/yuu-0617/Stellise" target="_blank" rel="noreferrer">GitHub</a>
           </p>
         </div>
-        <a class="device" href="https://stellise-app.com" target="_blank" rel="noreferrer" aria-label="Stellise公式サイトを見る">
+        <a class="device rv" style="--d:.15s" href="https://stellise-app.com" target="_blank" rel="noreferrer" aria-label="Stellise公式サイトを見る">
           <img src="https://stellise-app.com/assets/home-night.webp" alt="Stelliseの睡眠画面" loading="eager">
         </a>
       </article>
+      </div>
 
       <div class="projects">
-        <article class="project">
+        <article class="project rv">
           <div class="project-head">
             <h3>えほんのたね</h3>
             <p class="project-tag">個人開発・開発中</p>
@@ -126,7 +128,7 @@
           </div>
         </article>
 
-        <article class="project">
+        <article class="project rv">
           <div class="project-head">
             <h3>人事AIエージェント</h3>
             <p class="project-tag">共同開発・プロトタイプ</p>
@@ -139,7 +141,7 @@
           </div>
         </article>
 
-        <article class="project">
+        <article class="project rv">
           <div class="project-head">
             <h3>MUSELAB</h3>
             <p class="project-tag">3名のチーム開発・開発中</p>
@@ -156,13 +158,13 @@
     </section>
 
     <section class="about" id="about">
-      <h2 class="heading">自己紹介</h2>
+      <h2 class="heading rv">自己紹介</h2>
       <div class="about-grid">
-        <figure class="portrait">
+        <figure class="portrait rv">
           <img src="portrait.jpg" alt="名古屋で撮影した常盤井湧之介の後ろ姿" loading="lazy">
-          <figcaption class="glass">名古屋にて</figcaption>
+          <figcaption class="glass">in nagoya</figcaption>
         </figure>
-        <div class="about-copy">
+        <div class="about-copy rv" style="--d:.12s">
           <p class="about-name">Yunosuke Tokiwai<span>常盤井 湧之介</span></p>
           <p>名古屋国際工科専門職大学でソフトウェア開発を学んでいます。画面の実装だけでなく、企画や要件整理からテスト、リリース、運用まで関われるアプリケーションエンジニアを目指しています。</p>
           <p>現在はiOSアプリ開発を軸に、マルチモーダルAIやローカルLLMを使ったプロダクトにも取り組んでいます。</p>
@@ -176,11 +178,11 @@
     </section>
 
     <section class="contact" id="contact">
-      <h2 class="contact-title">コードと制作物を、<br>公開しています。</h2>
+      <h2 class="contact-title rv">コードと制作物を、<br>公開しています。</h2>
       <ul class="contact-links">
-        <li><a class="glass" href="https://github.com/yuu-0617" target="_blank" rel="noreferrer"><b>GitHub</b><span>yuu-0617</span></a></li>
-        <li><a class="glass" href="https://huggingface.co/yuu0617" target="_blank" rel="noreferrer"><b>Hugging Face</b><span>yuu0617</span></a></li>
-        <li><a class="glass" href="https://x.com/yuu_tokiwai" target="_blank" rel="noreferrer"><b>X</b><span>@yuu_tokiwai</span></a></li>
+        <li class="rv" style="--d:0.00s"><a class="glass" href="https://github.com/yuu-0617" target="_blank" rel="noreferrer"><b>GitHub</b><span>yuu-0617</span></a></li>
+        <li class="rv" style="--d:0.08s"><a class="glass" href="https://huggingface.co/yuu0617" target="_blank" rel="noreferrer"><b>Hugging Face</b><span>yuu0617</span></a></li>
+        <li class="rv" style="--d:0.16s"><a class="glass" href="https://x.com/yuu_tokiwai" target="_blank" rel="noreferrer"><b>X</b><span>@yuu_tokiwai</span></a></li>
       </ul>
     </section>
   </main>
@@ -190,6 +192,6 @@
     <a href="#top">ページの先頭へ</a>
   </footer>
 
-  <script src="script.js?v=20261014-2"></script>
+  <script src="script.js?v=20261014-3"></script>
 </body>
 </html>
