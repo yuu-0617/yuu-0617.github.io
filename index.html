@@ -28,10 +28,34 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261014">
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+      var seen = false;
+      try { seen = sessionStorage.getItem("splash") === "1"; sessionStorage.setItem("splash", "1"); } catch (e) {}
+      root.classList.add(seen || reduce ? "no-splash" : "splash-on");
+    })();
+  </script>
+  <link rel="stylesheet" href="styles.css?v=20261014-2">
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://yuu-tokiwai.com/#website","name":"Yunosuke Tokiwai","alternateName":"常盤井湧之介","url":"https://yuu-tokiwai.com/"},{"@type":"ProfilePage","@id":"https://yuu-tokiwai.com/#profile","url":"https://yuu-tokiwai.com/","name":"常盤井湧之介｜iOSアプリ開発ポートフォリオ","dateCreated":"2026-08-07T00:00:00+09:00","dateModified":"2026-10-14T00:00:00+09:00","mainEntity":{"@type":"Person","@id":"https://yuu-tokiwai.com/#person","name":"常盤井湧之介","alternateName":"Yunosuke Tokiwai","url":"https://yuu-tokiwai.com/","image":"https://yuu-tokiwai.com/portrait.jpg","description":"Swift・SwiftUIによるiOSアプリとAIプロダクトを開発する学生エンジニア","affiliation":{"@type":"CollegeOrUniversity","name":"名古屋国際工科専門職大学"},"sameAs":["https://github.com/yuu-0617","https://huggingface.co/yuu0617","https://x.com/yuu_tokiwai"],"knowsAbout":["Swift","SwiftUI","iOS Development","Python","FastAPI","TensorFlow Lite","Generative AI"]}}]}</script>
 </head>
 <body>
+  <div class="splash" aria-hidden="true">
+    <div class="splash-mark">
+      <svg class="splash-moon" viewBox="0 0 100 100">
+        <defs>
+          <mask id="splash-phase">
+            <rect width="100" height="100" fill="#fff"/>
+            <circle class="splash-shadow" cx="50" cy="50" r="41" fill="#000"/>
+          </mask>
+        </defs>
+        <circle class="splash-ring" cx="50" cy="50" r="40" pathLength="1"/>
+        <circle class="splash-disc" cx="50" cy="50" r="40" mask="url(#splash-phase)"/>
+      </svg>
+      <p class="splash-name"><span style="--i:0">Y</span><span style="--i:1">u</span><span style="--i:2">n</span><span style="--i:3">o</span><span style="--i:4">s</span><span style="--i:5">u</span><span style="--i:6">k</span><span style="--i:7">e</span><span style="--i:8">&nbsp;</span><span style="--i:9">T</span><span style="--i:10">o</span><span style="--i:11">k</span><span style="--i:12">i</span><span style="--i:13">w</span><span style="--i:14">a</span><span style="--i:15">i</span></p>
+    </div>
+  </div>
   <header class="bar">
     <a class="bar-name" href="#top">Yunosuke Tokiwai</a>
     <nav aria-label="メインナビゲーション">
@@ -166,6 +190,6 @@
     <a href="#top">ページの先頭へ</a>
   </footer>
 
-  <script src="script.js?v=20261014"></script>
+  <script src="script.js?v=20261014-2"></script>
 </body>
 </html>

@@ -277,7 +277,53 @@ img { display: block; max-width: 100%; }
   .foot { flex-direction: column; gap: 4px; }
 }
 
+/* ---------- ローディング画面（訪問ごとに最初の1回だけ） ---------- */
+:root { --splash-ink: #1f1d1a; }
+@media (prefers-color-scheme: dark) { :root { --splash-ink: #f1e6cc; } }
+
+.splash {
+  position: fixed; inset: 0; z-index: 200;
+  display: grid; place-items: center;
+  background: linear-gradient(180deg, var(--sky-top), var(--bg) 80%);
+  clip-path: circle(150% at 50% 46%);
+  animation: splash-close .9s cubic-bezier(.7, 0, .2, 1) 1.8s forwards;
+  pointer-events: none;
+}
+.no-splash .splash { display: none; }
+.splash-mark { display: flex; flex-direction: column; align-items: center; gap: 26px; animation: splash-settle .9s cubic-bezier(.7, 0, .2, 1) 1.65s forwards; }
+.splash-moon { width: 92px; height: 92px; overflow: visible; transform: rotate(-14deg); }
+.splash-ring {
+  fill: none; stroke: var(--splash-ink); stroke-width: .7;
+  stroke-dasharray: 1; stroke-dashoffset: 1;
+  animation: splash-draw .95s cubic-bezier(.6, 0, .2, 1) .1s forwards, splash-ring-fade .6s ease 1.05s forwards;
+}
+.splash-disc { fill: var(--splash-ink); opacity: 0; animation: splash-show .01s linear .55s forwards; }
+.splash-shadow { transform: translate(0, 0); animation: splash-wax 1.1s cubic-bezier(.4, 0, .2, 1) .55s forwards; }
+.splash-name {
+  margin: 0; display: flex;
+  font-family: var(--head); font-weight: 500; font-size: .95rem; letter-spacing: .32em;
+  color: var(--splash-ink);
+}
+.splash-name span { display: inline-block; opacity: 0; filter: blur(6px); transform: translateY(6px); animation: splash-letter .7s cubic-bezier(.2, .7, .1, 1) forwards; animation-delay: calc(.65s + var(--i) * .025s); }
+
+@keyframes splash-draw { to { stroke-dashoffset: 0; } }
+@keyframes splash-ring-fade { to { opacity: .22; } }
+@keyframes splash-show { to { opacity: 1; } }
+@keyframes splash-wax { to { transform: translate(-17px, 8px); } }
+@keyframes splash-letter { to { opacity: 1; filter: blur(0); transform: none; } }
+@keyframes splash-settle { to { transform: scale(.92); opacity: 0; } }
+@keyframes splash-close { to { clip-path: circle(0% at 50% 46%); visibility: hidden; } }
+
+/* ローディング後にヒーローをそっと出す */
+.splash-on .hero-inner > *, .splash-on .moon { animation: hero-in 1.1s cubic-bezier(.2, .7, .1, 1) both; animation-delay: 1.95s; }
+.splash-on .hero-inner > .now { animation-delay: 2.1s; }
+@keyframes hero-in { from { opacity: 0; transform: translateY(18px); } }
+@media (prefers-color-scheme: dark) { .splash-on .moon { animation-name: hero-in-moon; } }
+@keyframes hero-in-moon { from { opacity: 0; transform: rotate(-14deg) translateY(18px); } to { transform: rotate(-14deg); } }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   * { transition: none !important; }
+  .splash { display: none; }
+  .splash-on .hero-inner > *, .splash-on .moon { animation: none; }
 }
